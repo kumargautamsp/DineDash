@@ -12,6 +12,8 @@ const Body = () =>{
 
     const [searchText, setSearchText] = useState("");
 
+    console.log("Body Rendered", listOfRestaurants);
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -43,14 +45,16 @@ const Body = () =>{
 
 return listOfRestaurants.length == 0 ?< Shimmer />:(
 <div className="body">
-<div className="filter">
-    <div className="search">
-        <input type="text" className="search-box" value={searchText}
+<div className="filter flex">
+    <div className="search m-1 p-4">
+        <input type="text" className="border border-solid border-pink-100"
+         value={searchText}
         onChange={(e) => {
             setSearchText(e.target.value);
         }}
         />
-        <button onClick={() =>{
+        <button className="px-4 py-2 bg-green-200 m-4 rounded-full"
+         onClick={() =>{
           // Filter the restaurant card and update th UI
           //searchText  
         
@@ -62,8 +66,9 @@ return listOfRestaurants.length == 0 ?< Shimmer />:(
 
         }}>Search</button>
     </div>
+    <div className="search m-3 p-5  flex-items-centre">
     <button 
-     className="filter-btn"
+     className="px-4 py-2 bg-gray-100 rounded-full" 
       onClick={() =>{
         //Filter logic here
         const filteredList = listOfRestaurants.filter(
@@ -74,8 +79,9 @@ return listOfRestaurants.length == 0 ?< Shimmer />:(
     }}>
         Top Rated Restaurants
         </button>
+    </div> 
 </div>
-        <div className="res-container">
+        <div className="flex flex-wrap">
     {filteredRestaurant.map((restaurant) => (
      <Link key={restaurant.info.id}
         to={"/restaurants/" + restaurant.info.id}>< RestaurantCard resData= {restaurant}/>
