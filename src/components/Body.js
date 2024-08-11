@@ -69,40 +69,40 @@ return listOfRestaurants.length == 0 ?< Shimmer />:(
 
         }}>
             Search
-        </button>
-    </div>
-    <div className="search m-3 p-5  flex-items-centre">
-    <button 
-     className="px-4 py-2 bg-gray-100 rounded-full" 
-      onClick={() =>{
-        //Filter logic here
-        const filteredList = listOfRestaurants.filter(
-            (res) => res.info.avgRating > 4.5
-
-    );
-    setListofRestaurant(filteredList);
-    }}>
-        Top Rated Restaurants
-        </button>
-    </div>
-    <div className="search m-3 p-5  flex-items-centre">
-        <label> UserName </label>
-  <input className="border border-black  p-2"
-  value={loggedInUser}
-  onChange={(e) => setUserName(e.target.value)}
-  />
-    </div> 
+    </button>
 </div>
-        <div className="flex flex-wrap">
-    {filteredRestaurant.map((restaurant) => (
-     <Link key={restaurant.info.id}
-        to={"/restaurants/" + restaurant.info.id}>< RestaurantCard resData= {restaurant}/>
-     </Link>
-    
-         ))}
+<div className="search m-3 p-5  flex-items-centre">
+<button 
+className="px-4 py-2 bg-gray-100 rounded-full" 
+onClick={() =>{
+    //Filter logic here
+    const filteredList = listOfRestaurants.filter(
+        (res) => res.info.avgRating > 4.5
+
+);
+setListofRestaurant(filteredList);
+}}>
+    Top Rated Restaurants
+    </button>
+</div>
+<div className="search m-3 p-5  flex-items-centre">
+    <label> UserName </label>
+        <input className="border border-black  p-2"
+        value={loggedInUser}
+        onChange={(e) => setUserName(e.target.value)}
+        />
+            </div> 
         </div>
-        </div>
-    );
-    };
+                <div className="flex flex-wrap">
+            {filteredRestaurant.map((restaurant) => (
+            <Link key={restaurant.info.id}
+                to={"/restaurants/" + restaurant.info.id}>< RestaurantCard resData= {restaurant}/>
+            </Link>
+            
+                ))}
+                </div>
+                </div>
+            );
+            };
 
     export default Body;
