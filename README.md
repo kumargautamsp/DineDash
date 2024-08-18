@@ -1,4 +1,4 @@
-# DineDash
+#Namaste Reat 
 
 # Parcel
 -Dev Build
@@ -18,3 +18,8 @@
  -HTTPs
  -Tree shaking -remove unused code
  -Different dev and prod bumdles
+
+ # types of testing(developer)
+ -unit testing
+ intefration testing
+ -end to end testing

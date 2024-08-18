@@ -43,8 +43,8 @@ return (
     <div className="User-card">
         <img src={avatar_url}/>
         <h2>Name:{name}</h2>
-        <h3>Location: {location}</h3>
-        <h4>Contact: @kumargautamsp</h4>
+        <h3>Location:{location}</h3>
+        <h4>Contact:@kumargautamsp</h4>
     </div>
 );
 }

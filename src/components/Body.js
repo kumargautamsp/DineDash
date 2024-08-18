@@ -50,7 +50,9 @@ return listOfRestaurants.length == 0 ?< Shimmer />:(
 <div className="body">
 <div className="filter flex">
     <div className="search m-1 p-4">
-        <input type="text" className="border border-solid border-pink-100"
+        <input type="text"
+        data-testid="searchInput"
+        className="border border-solid border-pink-100"
          value={searchText}
         onChange={(e) => {
             setSearchText(e.target.value);
