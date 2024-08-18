@@ -1,4 +1,6 @@
-#Namaste Reat 
+# Dine Dash
+
+## Always use a CORS plugin extension to run this project
 
 # Parcel
 -Dev Build
